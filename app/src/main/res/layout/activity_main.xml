@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.lism1.activity.MainActivity">
+
+    <!--搜索框实现-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:completionThreshold="1"
+            android:hint="请输入搜索内容"
+            android:layout_weight="7"/>
+        <Button
+            android:id="@+id/search1"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:text="搜索"
+            android:textSize="18dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="100dp"/>
+    </LinearLayout>
+
+    <!--轮播图实现-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_marginTop="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="#33000000"
+        android:orientation="vertical"
+        android:layout_alignBottom="@+id/viewPager"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/point_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="130dp">
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/image_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!--底部导航栏实现-->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0E6DB0"
+        android:orientation="horizontal"
+        android:layout_below="@+id/viewPager">
+
+        <LinearLayout
+            android:id="@+id/llChat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/ivChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:src="@drawable/tab_chat" />
+
+            <TextView
+                android:id="@+id/tvChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="微信"
+                android:textColor="@drawable/tab_textview" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFriends"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/ivFriends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:src="@drawable/tab_friends" />
+
+            <TextView
+                android:id="@+id/tvFriends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="朋友"
+                android:textColor="@drawable/tab_textview" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llContacts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/ivContacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:src="@drawable/tab_contacts" />
+
+            <TextView
+                android:id="@+id/tvContacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通讯录"
+                android:textColor="@drawable/tab_textview" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/ivSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:src="@drawable/tab_setting" />
+            <TextView
+                android:id="@+id/tvSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置"
+                android:textColor="@drawable/tab_textview" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
+

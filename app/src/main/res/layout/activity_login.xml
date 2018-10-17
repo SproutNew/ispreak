@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.asus.lism1.activity.LoginActivity">
+    <TextView
+        android:text="欢迎来到绘声苑"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/login" />
+    <TextView
+        android:text="账号:"
+        android:textSize="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="205dp"
+        android:layout_marginLeft="20dp" />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="198dp"
+        android:layout_marginLeft="125dp"
+        android:layout_centerHorizontal="true"
+        android:hint="请输入账号"/>
+    <TextView
+        android:text="密码:"
+        android:textSize="20dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
+        android:layout_marginLeft="20dp" />
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        android:layout_marginLeft="125dp"
+        android:layout_centerHorizontal="true"
+        android:hint="请输入密码"/>
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:background="@drawable/shape"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="60dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册"
+        android:background="@drawable/shape"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="200dp"/>
+</RelativeLayout>
