@@ -1,24 +1,33 @@
 package com.example.asus.lism1.activity;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 import com.example.asus.lism1.R;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -26,6 +35,11 @@ public class MainActivity extends Activity {
     private Button search1;
     private AutoCompleteTextView textView;
     public static final String[] CONTENTS = new String[]{"zg陕西","zg海南","zg新疆","zg西藏"};
+
+    //下拉菜单
+    private Spinner spinner;
+    private List<String> data_list;
+    private ArrayAdapter<String> arr_adapter;
 
     //轮播图实现
     private ViewPager viewPager;
@@ -51,6 +65,8 @@ public class MainActivity extends Activity {
         }
     };
 
+    //底部导航栏实现
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +89,21 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this, textView.getText().toString(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        //下拉菜单实现
+        spinner = (Spinner) findViewById(R.id.spinner);
+        //数据
+        data_list = new ArrayList<String>();
+        data_list.add("北京");
+        data_list.add("上海");
+        data_list.add("广州");
+        data_list.add("深圳");
+        //适配器
+        arr_adapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data_list);
+        //设置样式
+        arr_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //加载适配器
+        spinner.setAdapter(arr_adapter);
 
         // 轮播图实现
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -140,6 +171,8 @@ public class MainActivity extends Activity {
          */
         handler.sendEmptyMessageDelayed(0, 3000);
 
+
+
     }
     @Override
     protected void onDestroy() {
@@ -147,7 +180,8 @@ public class MainActivity extends Activity {
         isRunning = false;
         super.onDestroy();
     }
-    private class MyPageAdapter extends PagerAdapter {
+
+    public class MyPageAdapter extends PagerAdapter {
         // 需要实现以下四个方法
         @Override
         public int getCount() {
@@ -190,6 +224,9 @@ public class MainActivity extends Activity {
             //object = null;
         }
     }
+
+
+
 }
 
 
