@@ -1,15 +1,11 @@
 package com.example.asus.lism1.activity;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -29,7 +25,7 @@ import com.example.asus.lism1.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener {
 
     //搜索功能
     private Button search1;
@@ -54,6 +50,28 @@ public class MainActivity extends Activity {
     protected int lastPosition = 0;
     // 判断是否自动滚动viewPager
     private boolean isRunning = true;
+
+
+
+
+
+
+
+
+
+
+
+    private TextView txt_channel;
+    private TextView txt_message;
+    private TextView txt_better;
+    private TextView txt_setting;
+
+
+
+
+
+
+
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             // 执行滑动到下一个页面
@@ -64,9 +82,6 @@ public class MainActivity extends Activity {
             }
         }
     };
-
-    //底部导航栏实现
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,7 +89,7 @@ public class MainActivity extends Activity {
 
         //搜索功能实现
         search1 = findViewById(R.id.search1);
-        textView = (AutoCompleteTextView)findViewById(R.id.autoCompleteTextView1);
+        textView = findViewById(R.id.autoCompleteTextView1);
 
         //创建一个ArrayAdapter适配器
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,CONTENTS);
@@ -106,9 +121,9 @@ public class MainActivity extends Activity {
         spinner.setAdapter(arr_adapter);
 
         // 轮播图实现
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        point_group = (LinearLayout) findViewById(R.id.point_group);
-        image_desc = (TextView) findViewById(R.id.image_desc);
+        viewPager = findViewById(R.id.viewPager);
+        point_group = findViewById(R.id.point_group);
+        image_desc =  findViewById(R.id.image_desc);
         image_desc.setText(imageDescriptions[0]);
 
         // 初始化图片资源
@@ -173,12 +188,21 @@ public class MainActivity extends Activity {
 
 
 
+        bindViews();
+        txt_channel.performClick();   //模拟一次点击，既进去后选择第一项
+
+
     }
     @Override
     protected void onDestroy() {
     // 停止滚动
         isRunning = false;
         super.onDestroy();
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 
     public class MyPageAdapter extends PagerAdapter {
@@ -227,6 +251,59 @@ public class MainActivity extends Activity {
 
 
 
+
+
+
+
+
+
+
+
+    //UI组件初始化与事件绑定
+    private void bindViews() {
+        txt_channel = findViewById(R.id.txt_channel);
+        txt_message =  findViewById(R.id.txt_message);
+        txt_better =  findViewById(R.id.txt_better);
+        txt_setting =  findViewById(R.id.txt_setting);
+
+        txt_channel.setOnClickListener(this);
+        txt_message.setOnClickListener(this);
+        txt_better.setOnClickListener(this);
+        txt_setting.setOnClickListener(this);
+    }
+
+    //重置所有文本的选中状态
+    private void setSelected(){
+        txt_channel.setSelected(false);
+        txt_message.setSelected(false);
+        txt_better.setSelected(false);
+        txt_setting.setSelected(false);
+    }
+
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.txt_channel:
+                setSelected();
+                txt_channel.setSelected(true);
+                break;
+            case R.id.txt_message:
+                setSelected();
+                txt_message.setSelected(true);
+
+                break;
+            case R.id.txt_better:
+                setSelected();
+                txt_better.setSelected(true);
+                break;
+            case R.id.txt_setting:
+                setSelected();
+                txt_setting.setSelected(true);
+                break;
+        }
+    }
 }
 
 

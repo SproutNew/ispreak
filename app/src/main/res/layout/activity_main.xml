@@ -6,12 +6,47 @@
     android:layout_height="match_parent"
     tools:context="com.example.asus.lism1.activity.MainActivity">
 
+    <!--搜索框实现-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:completionThreshold="1"
+            android:hint="请输入搜索内容" />
+
+        <Button
+            android:id="@+id/search1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="20dp"
+            android:text="搜索"
+            android:textSize="20dp" />
+        <!--下拉菜单-->
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top"
+            android:gravity="right" />
+
+
+    </LinearLayout>
+
     <!--轮播图实现-->
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="wrap_content"
         android:layout_height="160dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="50dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,60 +75,14 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <!--下拉菜单-->
-    <Spinner
-        android:layout_width="100dp"
-        android:layout_height="38dp"
-        android:paddingLeft="200dp"
-        android:layout_alignParentRight="true"
-        android:id="@+id/spinner" />
 
-    <!--搜索框实现-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:completionThreshold="1"
-            android:hint="请输入搜索内容"
-            android:layout_weight="7"/>
-        <Button
-            android:id="@+id/search1"
-            android:layout_width="wrap_content"
-            android:layout_height="43dp"
-            android:text="搜索"
-            android:textSize="18dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="40px"
-            android:layout_marginRight="100dp"/>
-    </LinearLayout>
 
-    <!--添加按钮-->
-    <Button
-        android:id="@+id/btn_5"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:text="+"
-        android:textColor="#ffffff"
-        android:textSize="50dp"
-        android:background="@drawable/shape1"
-        android:layout_marginBottom="72dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
-    <!--底部导航栏实现-->
     <LinearLayout
         android:id="@+id/ly_tab_bar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorWhite"
+        android:background="@color/bg_white"
         android:orientation="horizontal">
 
         <TextView
@@ -103,10 +92,10 @@
             android:layout_weight="1"
             android:background="@drawable/tab_menu_bg"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_channel"
+
             android:gravity="center"
             android:padding="5dp"
-            android:text="首页"
+            android:text="@string/tab_menu_alert"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp" />
 
@@ -117,10 +106,10 @@
             android:layout_weight="1"
             android:background="@drawable/tab_menu_bg"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_message"
+
             android:gravity="center"
             android:padding="5dp"
-            android:text="音吧"
+            android:text="@string/tab_menu_profile"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp" />
 
@@ -131,10 +120,10 @@
             android:layout_weight="1"
             android:background="@drawable/tab_menu_bg"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_better"
+
             android:gravity="center"
             android:padding="5dp"
-            android:text="消息"
+            android:text="@string/tab_menu_pay"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp" />
 
@@ -145,55 +134,16 @@
             android:layout_weight="1"
             android:background="@drawable/tab_menu_bg"
             android:drawablePadding="3dp"
-            android:drawableTop="@drawable/tab_menu_setting"
+
             android:gravity="center"
             android:padding="5dp"
-            android:text="我的"
+            android:text="@string/tab_menu_setting"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp"/>
     </LinearLayout>
-    <View
-        android:id="@+id/div_tab_bar"
-        android:layout_width="match_parent"
-        android:layout_height="2px"
-        android:background="@color/colorWhite"
-        android:layout_above="@id/ly_tab_bar"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/ly_tab_bar"
-        android:layout_above="@id/div_tab_bar"
-        android:id="@+id/ly_content">
 
-    </FrameLayout>
 
-    <RelativeLayout
-        android:id="@+id/ly_top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/colorAccent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/div_tab_bar">
-
-        <TextView
-            android:id="@+id/txt_topbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/colorAccent"
-            android:text="信息"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/colorWhite"
-            android:layout_alignParentBottom="true"/>
-
-    </RelativeLayout>
 
 </RelativeLayout>
 
