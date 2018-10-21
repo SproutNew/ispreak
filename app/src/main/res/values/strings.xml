@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">绘声苑</string>
+    <string name="tab_menu_alert">首页</string>
+    <string name="tab_menu_profile">音吧</string>
+    <string name="tab_menu_pay">消息</string>
+    <string name="tab_menu_setting">我的</string>
 </resources>
