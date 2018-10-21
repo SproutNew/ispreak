@@ -5,5 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.asus.lism1.activity.MyActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal" >
+    </LinearLayout>
 
 </RelativeLayout>

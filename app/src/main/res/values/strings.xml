@@ -4,4 +4,9 @@
     <string name="tab_menu_profile">音吧</string>
     <string name="tab_menu_pay">消息</string>
     <string name="tab_menu_setting">我的</string>
+    <string name="tab_menu_fanchang">方言翻唱</string>
+    <string name="tab_menu_battle">方言battle</string>
+    <string name="tab_menu_linghun">有趣的灵魂</string>
+    <string name="tab_menu_kong">声音控</string>
+    <string name="tab_menu_shu">方言说书</string>
 </resources>

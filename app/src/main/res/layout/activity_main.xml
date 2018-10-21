@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,8 +38,6 @@
             android:layout_height="50dp"
             android:layout_gravity="top"
             android:gravity="right" />
-
-
     </LinearLayout>
 
     <!--轮播图实现-->
@@ -76,6 +75,10 @@
     </LinearLayout>
 
 
+    <!--头像框-->
+
+
+    <!--底部导航栏-->
 
     <LinearLayout
         android:id="@+id/ly_tab_bar"
@@ -140,6 +143,39 @@
             android:text="@string/tab_menu_setting"
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true">
+
+        <com.example.asus.lism1.utils.ZQImageViewRoundOval
+            android:id="@+id/cicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:paddingTop="@dimen/activity_vertical_margin"/>
+
+        <com.example.asus.lism1.utils.ZQImageViewRoundOval
+            android:id="@+id/roundRect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"/>
+
+        <!--音频-->
+        <com.example.asus.lism1.utils.CustomAudioIcon
+            android:id="@+id/btnStartStop"
+            android:layout_width="64dip"
+            android:layout_height="64dip"
+            custom:type="start"
+            custom:color="#66DD22"
+            android:layout_below="@+id/viewPager"
+            android:layout_toEndOf="@+id/linearLayout"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="77dp" />
     </LinearLayout>
 
 

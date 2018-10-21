@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 import com.example.asus.lism1.R;
 
-import static com.example.asus.lism1.R.id.txt_channel;
-
-public class SoundActivity extends Activity implements View.OnClickListener{
+public class BattleActivity extends Activity implements View.OnClickListener{
 
     //手势滑动
     private GestureDetector mDetector;
@@ -31,18 +29,17 @@ public class SoundActivity extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sound);
+        setContentView(R.layout.activity_battle);
 
         //顶部导航栏
         bindViews();
-        fanchang.performClick();   //模拟一次点击，既进去后选择第一项
+        battle.performClick();   //模拟一次点击，既进去后选择第一项
 
         //手势实现
         //实例化SimpleOnGestureListener与GestureDetector对象
         mgListener = new MyGestureListener();
         mDetector = new GestureDetector(this, mgListener);
     }
-
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -54,11 +51,11 @@ public class SoundActivity extends Activity implements View.OnClickListener{
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
             if(e1.getX() - e2.getX() > MIN_MOVE){
-                startActivity(new Intent(SoundActivity.this, BattleActivity.class));
-                Toast.makeText(SoundActivity.this, "通过手势启动Activity", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(BattleActivity.this, MainActivity.class));
+                Toast.makeText(BattleActivity.this, "通过手势启动Activity", Toast.LENGTH_SHORT).show();
             }else if(e1.getX() - e2.getX()  < MIN_MOVE){
                 finish();
-                Toast.makeText(SoundActivity.this,"通过手势关闭Activity",Toast.LENGTH_SHORT).show();
+                Toast.makeText(BattleActivity.this,"通过手势关闭Activity",Toast.LENGTH_SHORT).show();
             }
             return true;
         }
@@ -72,7 +69,7 @@ public class SoundActivity extends Activity implements View.OnClickListener{
         kong =  findViewById(R.id.kong);
         shu =  findViewById(R.id.shu);
 
-        fanchang.setOnClickListener(this);
+        fanchang.setOnClickListener( this);
         battle.setOnClickListener(this);
         linghun.setOnClickListener(this);
         kong.setOnClickListener(this);

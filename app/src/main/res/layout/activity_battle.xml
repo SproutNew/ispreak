@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_sound"
+    android:id="@+id/activity_battle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.asus.lism1.activity.SoundActivity">
-
-
-
-    <RelativeLayout
-        android:id="@+id/ly_top_bar"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/bg_topbar">
-
-        <TextView
-            android:id="@+id/txt_topbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/text_topbar"
-            android:text="信息"/>
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:background="@color/div_white"
-            android:layout_alignParentBottom="true"/>
-
-    </RelativeLayout>
-
-
-
+    tools:context="com.example.asus.lism1.activity.BattleActivity">
     <LinearLayout
         android:id="@+id/ly_tab_bar"
         android:layout_width="match_parent"
@@ -59,7 +29,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/linghun"
+            android:id="@+id/battle"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.97"
@@ -73,7 +43,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/battle"
+            android:id="@+id/linghun"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/tab_menu_bg"

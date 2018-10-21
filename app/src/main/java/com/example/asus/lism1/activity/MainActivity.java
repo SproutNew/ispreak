@@ -21,11 +21,16 @@ import android.widget.Toast;
 
 
 import com.example.asus.lism1.R;
+import com.example.asus.lism1.utils.ZQImageViewRoundOval;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity implements View.OnClickListener {
+    //头像框
+    private ZQImageViewRoundOval iv_circle;//圆形图片
+    private ZQImageViewRoundOval iv_roundRect;//圆角矩形图片
+    //音频功能
 
     //搜索功能
     private Button search1;
@@ -51,26 +56,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     // 判断是否自动滚动viewPager
     private boolean isRunning = true;
 
-
-
-
-
-
-
-
-
-
-
+    //底部导航栏
     private TextView txt_channel;
     private TextView txt_message;
     private TextView txt_better;
     private TextView txt_setting;
-
-
-
-
-
-
 
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -186,12 +176,21 @@ public class MainActivity extends Activity implements View.OnClickListener {
          */
         handler.sendEmptyMessageDelayed(0, 3000);
 
+        //头像框
+        initViews();
 
-
+        //底部导航栏
         bindViews();
         txt_channel.performClick();   //模拟一次点击，既进去后选择第一项
 
 
+    }
+    /**    * 初始化Views    */
+    private void initViews(){
+        iv_circle =(ZQImageViewRoundOval)findViewById(R.id.cicle);
+        iv_roundRect =(ZQImageViewRoundOval)findViewById(R.id.roundRect);
+        iv_roundRect.setType(ZQImageViewRoundOval.TYPE_ROUND);
+        iv_roundRect.setRoundRadius(7);//矩形凹行大小
     }
     @Override
     protected void onDestroy() {
@@ -249,16 +248,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
     //UI组件初始化与事件绑定
     private void bindViews() {
         txt_channel = findViewById(R.id.txt_channel);
@@ -267,9 +256,31 @@ public class MainActivity extends Activity implements View.OnClickListener {
         txt_setting =  findViewById(R.id.txt_setting);
 
         txt_channel.setOnClickListener(this);
-        txt_message.setOnClickListener(this);
-        txt_better.setOnClickListener(this);
-        txt_setting.setOnClickListener(this);
+        //txt_message.setOnClickListener(this);
+        txt_message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(MainActivity.this,SoundActivity.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, textView.getText().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        txt_better.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(MainActivity.this,MessageActivity.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, textView.getText().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
+        txt_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(MainActivity.this,MyActivity.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, textView.getText().toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     //重置所有文本的选中状态
@@ -279,8 +290,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         txt_better.setSelected(false);
         txt_setting.setSelected(false);
     }
-
-
 
     @Override
     public void onClick(View v) {
