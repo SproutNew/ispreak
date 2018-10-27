@@ -5,12 +5,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.asus.lism1.activity.MyActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="20dp"
-        android:background="#FFFFFF"
-        android:orientation="horizontal" >
-    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/r1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="53dp">
+        <ImageView
+            android:id="@+id/my3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/pic0"
+            android:layout_marginStart="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/my4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:clickable="true"
+            android:text="退出登录"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/my3" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/my1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/pic0"
+            android:layout_marginStart="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/my2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:clickable="true"
+            android:text="用户名"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/my1"
+            android:layout_marginStart="21dp" />
+    </RelativeLayout>
 
 </RelativeLayout>

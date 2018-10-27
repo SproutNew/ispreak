@@ -116,6 +116,18 @@
             android:textColor="@drawable/tab_menu_text"
             android:textSize="16sp" />
 
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/tab_menu_bg"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textColor="@drawable/tab_menu_text"
+            android:text="+"
+            android:textSize="40dp" />
+
         <TextView
             android:id="@+id/txt_better"
             android:layout_width="0dp"
@@ -150,7 +162,8 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
 
         <com.example.asus.lism1.utils.ZQImageViewRoundOval
             android:id="@+id/cicle"
@@ -176,6 +189,8 @@
             android:layout_toEndOf="@+id/linearLayout"
             android:layout_marginStart="52dp"
             android:layout_marginTop="77dp" />
+
+
     </LinearLayout>
 
 
