@@ -12,7 +12,6 @@ import android.view.ViewParent;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -21,6 +20,7 @@ import android.widget.Toast;
 
 
 import com.example.asus.lism1.R;
+import com.example.asus.lism1.utils.CircularImage;
 import com.example.asus.lism1.utils.ZQImageViewRoundOval;
 
 import java.util.ArrayList;
@@ -28,9 +28,9 @@ import java.util.List;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     //头像框
-    private ZQImageViewRoundOval iv_circle;//圆形图片
-    private ZQImageViewRoundOval iv_roundRect;//圆角矩形图片
+
     //音频功能
+
 
     //搜索功能
     private Button search1;
@@ -177,21 +177,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
         handler.sendEmptyMessageDelayed(0, 3000);
 
         //头像框
-        initViews();
+        CircularImage img_round = (CircularImage) findViewById(R.id.img_round);
+        img_round.setImageResource(R.mipmap.pic0);
 
         //底部导航栏
         bindViews();
         txt_channel.performClick();   //模拟一次点击，既进去后选择第一项
 
+    }
 
-    }
-    /**    * 初始化Views    */
-    private void initViews(){
-        iv_circle =(ZQImageViewRoundOval)findViewById(R.id.cicle);
-        iv_roundRect =(ZQImageViewRoundOval)findViewById(R.id.roundRect);
-        iv_roundRect.setType(ZQImageViewRoundOval.TYPE_ROUND);
-        iv_roundRect.setRoundRadius(7);//矩形凹行大小
-    }
     @Override
     protected void onDestroy() {
     // 停止滚动

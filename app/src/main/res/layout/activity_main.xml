@@ -158,43 +158,67 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/fork"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:weightSum="1">
-
-        <com.example.asus.lism1.utils.ZQImageViewRoundOval
-            android:id="@+id/cicle"
-            android:layout_width="wrap_content"
+        android:layout_below="@+id/viewPager"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:layout_width="385sp"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:paddingTop="@dimen/activity_vertical_margin"/>
-
-        <com.example.asus.lism1.utils.ZQImageViewRoundOval
-            android:id="@+id/roundRect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"/>
-
-        <!--音频-->
-        <com.example.asus.lism1.utils.CustomAudioIcon
-            android:id="@+id/btnStartStop"
-            android:layout_width="64dip"
-            android:layout_height="64dip"
-            custom:type="start"
-            custom:color="#66DD22"
-            android:layout_below="@+id/viewPager"
-            android:layout_toEndOf="@+id/linearLayout"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="77dp" />
-
-
+            android:text="最新上传"
+            android:textSize="20sp"
+            android:textColor="#C0C0C0"/>
     </LinearLayout>
 
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:layout_below="@+id/fork"
+        android:layout_alignParentStart="true">
+        <com.example.asus.lism1.utils.CircularImage
+            android:id="@+id/img_round"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_marginLeft="20sp" />
+        <TextView
+            android:id="@+id/name"
+            android:text="用户名"
+            android:layout_width="50sp"
+            android:layout_height="20sp"
+            android:layout_marginLeft="23sp"
+            android:layout_below="@+id/img_round" />
+        <TextView
+            android:text="安卓真简单"
+            android:textSize="20sp"
+            android:id="@+id/content"
+            android:layout_marginTop="10sp"
+            android:layout_width="180sp"
+            android:layout_height="30sp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/img_round"/>
 
-
+        <TextView
+            android:text="闽南语"
+            android:textColor="@color/colorAccent"
+            android:gravity="center"
+            android:layout_width="150sp"
+            android:layout_height="20sp"
+            android:layout_marginLeft="20sp"
+            android:layout_alignBaseline="@+id/name"
+            android:layout_alignBottom="@+id/name"
+            android:layout_alignEnd="@+id/content"
+            android:layout_marginEnd="13dp"
+            android:id="@+id/textView3" />
+        <com.example.asus.lism1.utils.CustomAudioIcon
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            custom:type="start"
+            custom:color="#E8E8E8"
+            android:layout_toRightOf="@+id/content"
+            android:layout_marginTop="10sp"/>
+    </RelativeLayout>
 
 </RelativeLayout>
 

@@ -82,7 +82,7 @@ public class CustomAudioIcon extends View implements View.OnTouchListener {
 
         pressPaint = new Paint();
 
-        pressPaint.setColor(Color.GREEN);
+        pressPaint.setColor(Color.GRAY);
 
         pressPaint.setAntiAlias(true);
 

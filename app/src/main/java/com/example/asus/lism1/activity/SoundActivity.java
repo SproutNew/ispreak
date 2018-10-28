@@ -1,115 +1,39 @@
 package com.example.asus.lism1.activity;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.asus.lism1.R;
+import com.example.asus.lism1.utils.MyPagerAdapter;
 
-import static com.example.asus.lism1.R.id.txt_channel;
+import java.util.ArrayList;
 
-public class SoundActivity extends Activity implements View.OnClickListener{
+public class SoundActivity extends Activity {
 
-    //手势滑动
-    private GestureDetector mDetector;
-    private final static int MIN_MOVE = 200;   //最小距离
-    private MyGestureListener mgListener;
-
-    //底部导航栏
-    private TextView fanchang;
-    private TextView battle;
-    private TextView linghun;
-    private TextView kong;
-    private TextView shu;
+    private ViewPager vpager_two;
+    private ArrayList<View> aList;
+    private ArrayList<String> sList;
+    private MyPagerAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sound);
 
-        //顶部导航栏
-        bindViews();
-        fanchang.performClick();   //模拟一次点击，既进去后选择第一项
-
-        //手势实现
-        //实例化SimpleOnGestureListener与GestureDetector对象
-        mgListener = new MyGestureListener();
-        mDetector = new GestureDetector(this, mgListener);
-    }
-
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        return mDetector.onTouchEvent(event);
-    }
-
-    //自定义一个GestureListener,这个是View类下的，别写错哦！！！
-    private class MyGestureListener extends GestureDetector.SimpleOnGestureListener {
-        @Override
-        public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
-            if(e1.getX() - e2.getX() > MIN_MOVE){
-                startActivity(new Intent(SoundActivity.this, BattleActivity.class));
-                Toast.makeText(SoundActivity.this, "通过手势启动Activity", Toast.LENGTH_SHORT).show();
-            }else if(e1.getX() - e2.getX()  < MIN_MOVE){
-                finish();
-                Toast.makeText(SoundActivity.this,"通过手势关闭Activity",Toast.LENGTH_SHORT).show();
-            }
-            return true;
-        }
-    }
-
-    //UI组件初始化与事件绑定
-    private void bindViews() {
-        fanchang = findViewById(R.id.fanchang);
-        battle =  findViewById(R.id.battle);
-        linghun =  findViewById(R.id.linghun);
-        kong =  findViewById(R.id.kong);
-        shu =  findViewById(R.id.shu);
-
-        fanchang.setOnClickListener(this);
-        battle.setOnClickListener(this);
-        linghun.setOnClickListener(this);
-        kong.setOnClickListener(this);
-        shu.setOnClickListener(this);
-    }
-
-    //重置所有文本的选中状态
-    private void setSelected(){
-        fanchang.setSelected(false);
-        battle.setSelected(false);
-        linghun.setSelected(false);
-        kong.setSelected(false);
-        shu.setSelected(false);
-    }
-
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.fanchang:
-                setSelected();
-                fanchang.setSelected(true);
-                break;
-            case R.id.battle:
-                setSelected();
-                battle.setSelected(true);
-                break;
-            case R.id.linghun:
-                setSelected();
-                linghun.setSelected(true);
-                break;
-            case R.id.kong:
-                setSelected();
-                kong.setSelected(true);
-                break;
-            case R.id.shu:
-                setSelected();
-                shu.setSelected(true);
-                break;
-        }
+        vpager_two = (ViewPager) findViewById(R.id.vpager_two);
+        aList = new ArrayList<View>();
+        LayoutInflater li = getLayoutInflater();
+        aList.add(li.inflate(R.layout.view_one,null,false));
+        aList.add(li.inflate(R.layout.view_two,null,false));
+        aList.add(li.inflate(R.layout.view_three, null, false));
+        sList = new ArrayList<String>();
+        sList.add("方言翻唱");
+        sList.add("方言battle");
+        sList.add("浅棕");
+        mAdapter = new MyPagerAdapter(aList,sList);
+        vpager_two.setAdapter(mAdapter);
     }
 }

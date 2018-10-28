@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/view_two2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border1">
+        <TextView
+            android:id="@+id/view_two1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="今日battle"
+            android:textColor="#ff0000"
+            android:textSize="30sp"/>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70sp"
+            android:text="豆腐脑是咸的好还是甜的好"
+            android:textSize="20sp"
+            android:layout_below="@+id/view_two1" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_two2">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:background="@drawable/border1"
+            android:text="咸的好"
+            android:textSize="30sp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            android:background="@drawable/border1"
+            android:text="甜的好"
+            android:textSize="30sp"
+            android:gravity="center" />
+    </LinearLayout>
+</RelativeLayout>

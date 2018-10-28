@@ -7,40 +7,9 @@
     tools:context="com.example.asus.lism1.activity.MyActivity">
 
     <RelativeLayout
-        android:id="@+id/r1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="53dp">
-        <ImageView
-            android:id="@+id/my3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:src="@mipmap/pic0"
-            android:layout_marginStart="51dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true" />
-        <TextView
-            android:id="@+id/my4"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
-            android:clickable="true"
-            android:text="退出登录"
-            android:layout_marginLeft="20dp"
-            android:textSize="30sp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/my3" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/border"
-        android:layout_alignParentTop="true"
+        android:background="@drawable/border1"
         android:layout_alignParentStart="true">
         <ImageView
             android:id="@+id/my1"
@@ -55,7 +24,7 @@
             android:id="@+id/my2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
+            android:textColor="#000000"
             android:clickable="true"
             android:text="用户名"
             android:layout_marginLeft="20dp"
@@ -63,6 +32,123 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/my1"
             android:layout_marginStart="21dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/r2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border1"
+        android:layout_marginTop="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/my5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/pic0"
+            android:layout_marginStart="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/my6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:text="消息设置"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/my5" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/r1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border1"
+        android:layout_below="@+id/r2"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/my3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/pic0"
+            android:layout_marginStart="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/my4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:text="意见反馈"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/my3" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/r3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border1"
+        android:layout_below="@+id/r1"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/my7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/pic0"
+            android:layout_marginStart="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/my8"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:text="关于我们"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/my7" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/r4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border1"
+        android:layout_below="@+id/r3"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/my9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/pic0"
+            android:layout_marginStart="51dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/my10"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:text="退出登录"
+            android:layout_marginLeft="20dp"
+            android:textSize="30sp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/my9" />
     </RelativeLayout>
 
 </RelativeLayout>
