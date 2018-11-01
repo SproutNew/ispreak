@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_sound"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.lism1.activity.AddSoundActivity">
+
+    <Button
+        android:id="@+id/play"
+        android:onClick="playrecorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp" />
+
+    <TextView
+        android:id="@+id/tv_sendmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:onClick="filerecord"
+        android:layout_marginRight="20sp"
+        android:text="文件录音:" />
+
+    <TextView
+        android:id="@+id/tv_press_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按下说话"/>
+
+</LinearLayout>

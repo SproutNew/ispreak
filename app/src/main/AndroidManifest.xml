@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.asus.lism1">
 
+    <!-- 授予该程序录制声音的权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 授予该程序向外部存储器写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/tubiao"
@@ -23,7 +28,16 @@
         <activity android:name=".activity.MyActivity" />
         <activity android:name=".activity.BattleActivity" />
         <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.SoundActivity"></activity>
+        <activity android:name=".activity.SoundActivity" />
+        <activity android:name=".activity.AddSoundActivity">
+
+            <!-- 授予该程序录制声音的权限 -->
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <!-- 授予该程序向外部存储器写入数据的权限 -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        </activity>
+        <activity android:name=".my.IdeaActivity" />
+        <activity android:name=".activity.ChatActivity"></activity>
     </application>
 
 </manifest>

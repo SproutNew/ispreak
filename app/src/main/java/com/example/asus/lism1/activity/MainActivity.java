@@ -2,7 +2,9 @@ package com.example.asus.lism1.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -21,8 +23,10 @@ import android.widget.Toast;
 
 import com.example.asus.lism1.R;
 import com.example.asus.lism1.utils.CircularImage;
+import com.example.asus.lism1.utils.CustomAudioIcon;
 import com.example.asus.lism1.utils.ZQImageViewRoundOval;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +34,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     //头像框
 
     //音频功能
-
+    private CustomAudioIcon customAudioIcon;
+    private MediaPlayer mediaPlayer = new MediaPlayer();
 
     //搜索功能
     private Button search1;
@@ -176,6 +181,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
          */
         handler.sendEmptyMessageDelayed(0, 3000);
 
+        //音频
+        customAudioIcon=findViewById(R.id.sound);
+        initMediaPlayer();
+        customAudioIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            
+            }
+        });
+
         //头像框
         CircularImage img_round = (CircularImage) findViewById(R.id.img_round);
         img_round.setImageResource(R.mipmap.pic0);
@@ -184,6 +199,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bindViews();
         txt_channel.performClick();   //模拟一次点击，既进去后选择第一项
 
+    }
+
+    private void initMediaPlayer() {
+        try {
+            File file = new File(Environment.getExternalStorageDirectory(), "test.mp3");
+            mediaPlayer.setDataSource(file.getPath()); // 指定音频文件的路径
+            mediaPlayer.prepare(); // 让MediaPlayer进入到准备状态
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -288,6 +313,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.sound:
+                initMediaPlayer();
+                break;
             case R.id.txt_channel:
                 setSelected();
                 txt_channel.setSelected(true);
@@ -295,7 +323,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.txt_message:
                 setSelected();
                 txt_message.setSelected(true);
-
                 break;
             case R.id.txt_better:
                 setSelected();

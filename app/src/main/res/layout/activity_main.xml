@@ -212,6 +212,7 @@
             android:layout_marginEnd="13dp"
             android:id="@+id/textView3" />
         <com.example.asus.lism1.utils.CustomAudioIcon
+            android:id="@+id/sound"
             android:layout_width="50sp"
             android:layout_height="50sp"
             custom:type="start"

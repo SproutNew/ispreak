@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_idea"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.lism1.my.IdeaActivity">
+    <TextView
+        android:id="@+id/idea1"
+        android:paddingTop="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:layout_width="fill_parent"
+        android:layout_height="205dp"
+        android:background="@drawable/border3"
+        android:layout_marginTop="20sp"
+        android:hint="(不少于10个字哦)"/>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/post"
+        android:layout_marginTop="30dp"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/idea2"
+        android:layout_alignStart="@+id/idea2"
+        android:layout_alignEnd="@+id/idea2" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border2"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:id="@+id/idea2"
+        android:text="提交"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:layout_below="@+id/idea1"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
