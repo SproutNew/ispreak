@@ -31,4 +31,38 @@
         android:layout_below="@+id/one1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent">
+        <TextView
+            android:id="@+id/one4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="晚竹"
+            android:textSize="30sp"
+            android:layout_toRightOf="@+id/one3"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40sp"/>
+
+        <ImageView
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            android:src="@mipmap/share"
+            android:id="@+id/imageView2"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <com.example.asus.lism1.utils.CircularImage
+            android:id="@+id/one3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:foregroundGravity="center"
+            android:layout_marginStart="33dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
 </RelativeLayout>

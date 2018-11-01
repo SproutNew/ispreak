@@ -8,12 +8,14 @@ import android.widget.TextView;
 
 import com.example.asus.lism1.R;
 import com.example.asus.lism1.my.IdeaActivity;
+import com.example.asus.lism1.my.InformationActivity;
 import com.example.asus.lism1.utils.CircularImage;
 
 public class MyActivity extends Activity {
 
     private TextView my10;
     private TextView my4;
+    private TextView my6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,16 @@ public class MyActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent =new Intent(MyActivity.this, IdeaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //消息设置
+        my6=findViewById(R.id.my6);
+        my6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(MyActivity.this, InformationActivity.class);
                 startActivity(intent);
             }
         });

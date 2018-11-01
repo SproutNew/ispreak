@@ -7,10 +7,12 @@
     tools:context="com.example.asus.lism1.activity.MessageActivity">
 
     <RelativeLayout
+        android:id="@+id/message1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/border1"
         android:layout_alignParentTop="true"
+        android:clickable="true"
         android:layout_alignParentStart="true">
 
         <TextView
